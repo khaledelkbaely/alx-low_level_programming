@@ -2,6 +2,7 @@
 echo "filename: "
 read filename
 echo '#include <stdio.h>
+
 /**
  * main - Entry point
  *
@@ -9,7 +10,7 @@ echo '#include <stdio.h>
  */
 int main(void)
 {
-    printf("Hello, world!\n");
-    return (0);
-}' > ${filename}
+	return (0);
+}
+' > ${filename}
 vi ${filename}
