@@ -12,7 +12,7 @@ int main(void)
 
 	while (before_ten < 58)
 		putchar(before_ten++);
-	
+
 	while (after_ten < 103)
 		putchar(after_ten++);
 	putchar('\n');
