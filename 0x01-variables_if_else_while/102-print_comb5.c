@@ -7,27 +7,29 @@
  */
 int main(void)
 {
-	int i, j, tens_i, ones_i, tens_j, ones_j;
+	int first, second, third, fourth;
 
-	for (i = 0; i < 100; i++)
+	for (first = 0; first < 10; first++)
 	{
-		for (j = i + 1; j < 100; j++)
+		for (second = 0; second < 10; second++)
 		{
-			tens_i = i / 10;
-			ones_i = i % 10;
-			tens_j = j / 10;
-			ones_j = j % 10;
-
-			putchar(tens_i + '0');
-			putchar(ones_i + '0');
-			putchar(' ');
-			putchar(tens_j + '0');
-			putchar(ones_j + '0');
-
-			if (i != 98 || j != 99)
+			fourth = second + 1;
+			third = first;
+			for (; third < 10; third++)
 			{
-				putchar(',');
-				putchar(' ');
+				for (; fourth < 10; fourth++)
+				{
+					putchar(first + '0');
+					putchar(second + '0');
+					putchar(' ');
+					putchar(third + '0');
+					putchar(fourth + '0');
+					if (first != 9 || third != 9 || second != 8 || fourth != 9)
+					{
+						putchar(',');
+						putchar(' ');
+					}
+				}
 			}
 		}
 	}
