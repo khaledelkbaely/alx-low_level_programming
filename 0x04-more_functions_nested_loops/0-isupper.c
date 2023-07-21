@@ -16,7 +16,7 @@ int _isupper(int c)
 
 	while (i < 26)
 	{
-		if (c == i 'a')
+		if (c == i + 'A')
 		{
 			return (1);
 		}
