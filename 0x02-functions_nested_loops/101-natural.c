@@ -20,7 +20,7 @@ int main(void)
 		{
 			sum += num;
 		}
-		num -= 2;
+		num--;
 	}
 	printf("%d\n", sum);
 	return (0);
