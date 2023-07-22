@@ -24,7 +24,7 @@ int main(void)
 			_putchar('z');
 			_putchar(' ');
 		}
-		else if (i % 3 == 0)
+		else if (i % 3 == 0 && i % 5 != 0)
 		{
 			_putchar('F');
 			_putchar('i');
@@ -32,7 +32,7 @@ int main(void)
 			_putchar('z');
 			_putchar(' ');
 		}
-		else if (i % 5 == 0)
+		else if (i % 5 == 0 && i % 3 != 0)
 		{
 			_putchar('B');
 			_putchar('u');
