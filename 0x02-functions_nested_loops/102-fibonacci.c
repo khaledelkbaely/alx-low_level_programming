@@ -12,7 +12,7 @@ int main(void)
 	unsigned long int first = 1;
 	unsigned long int second = 2;
 	unsigned long int sum;
-	int i = 0;
+	int i = 2;
 
 	printf("%lu, %lu, ", first, second);
 	while (i < 50)
