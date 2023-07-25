@@ -8,7 +8,7 @@
  * Return: return the length of the string s
  */
 
-void _strlen(char *s)
+int _strlen(char *s)
 {
 	int len = 0;
 
