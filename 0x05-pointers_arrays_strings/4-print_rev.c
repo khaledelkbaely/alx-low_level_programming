@@ -11,29 +11,18 @@
 
 void print_rev(char *s)
 {
-	int i;
-	int n = _strlen(s);
-	char  rev[n];
-	bool end = false;
-	int j;
+	int i, j, len;
 
-	for (i = 0; i < n; i++)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		rev[i] = s[n - 1 - i];
+		i++;
 	}
+	len = i;
 
-	j = 0;
-	while (!end)
+	for (j = len - 1; j >= 0; j--)
 	{
-		if (rev[j] == '\0')
-		{
-			end = true;
-			_putchar('\n');
-		}
-		else
-		{
-			_putchar(rev[j]);
-			j++;
-		}
+		_putchar(s[j]);
 	}
+	_putchar('\n');
 }
