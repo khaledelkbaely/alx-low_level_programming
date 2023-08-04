@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		int j;
-		
+
 		for (j = 0; *(argv[i] + j); j++)
 		{
 			_putchar(*(argv[i] + j));
