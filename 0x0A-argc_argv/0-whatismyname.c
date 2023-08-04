@@ -11,7 +11,12 @@
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int i;
+
+	if (argc != 1)
+		return (1);
+
+	i = 0;
 
 	while (*(argv[0] + i) != '\0')
 	{
@@ -19,4 +24,5 @@ int main(int argc, char *argv[])
 		i++;
 	}
 	_putchar('\n');
+	return (0);
 }
