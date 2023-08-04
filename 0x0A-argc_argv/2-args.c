@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 	i = 0;
 
-	while (argv[i])
+	while (i < argc)
 	{
 		int j;
 		
