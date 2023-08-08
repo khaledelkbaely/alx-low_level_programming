@@ -35,7 +35,7 @@ char *argstostr(int ac, char **av)
 		length = strlen(av[i]);
 		strncpy(new_string + arg, av[i], length);
 		arg += length;
-		new_string[arg++] '\n';
+		new_string[arg++] = '\n';
 	}
 	new_string[len] = '\0';
 	return (new_string);
