@@ -34,7 +34,7 @@ int count_words(char *str)
 /**
  * check_for -check string for NULL
  *
- * @str: string
+ * @word: string
  * @words: array of strings
  * @word_index: word index
  *
@@ -67,12 +67,13 @@ char **strtow(char *str)
 {
 	int word_count, word_index, is_word, word_length, i;
 	char **words;
-	char *start;
-	char *word;
+	char *start, *word;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	word_count = count_words(str);
+	if (word_count == 0)
+		return (NULL);
 	words = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (words == NULL)
 		return (NULL);
