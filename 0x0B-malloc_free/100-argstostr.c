@@ -14,9 +14,9 @@ int get_total_length(int ac, char **av)
 {
 	int total_length = 0;
 	char *arg;
-	int j;
+	int i, j;
 
-	for (int i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		arg = av[i];
 		j = 0;
@@ -45,6 +45,7 @@ char *argstostr(int ac, char **av)
 	char *result;
 	int current_index;
 	int i, j;
+	char *arg;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
