@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
-	
+
 	for (i = 0; i < num_bytes; i++)
 	{
 		if (i != num_bytes - 1)
