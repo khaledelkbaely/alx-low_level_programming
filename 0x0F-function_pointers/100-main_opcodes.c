@@ -2,28 +2,6 @@
 #include <stdlib.h>
 
 /**
- * print_opcodes - ...
- *
- * @num_bytes: num of bytes to print
- *
- * Return: nothing
- */
-
-void print_opcodes(int num_bytes)
-{
-	unsigned char *ptr = (unsigned char *)&print_opcodes;
-	int i;
-
-	for (i = 0; i < num_bytes; i++)
-	{
-		if (i != num_bytes - 1)
-			printf("%02x ", ptr[i]);
-		else
-			printf("%02x\n", ptr[i]);
-	}
-}
-
-/**
  * main - entry point
  *
  * @argc: ...
@@ -34,7 +12,10 @@ void print_opcodes(int num_bytes)
 
 int main(int argc, char **argv)
 {
+	unsigned char *ptr = (unsigned char *)&main;
 	int num_bytes;
+	int i;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -47,8 +28,14 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
-
-	print_opcodes(num_bytes);
+	
+	for (i = 0; i < num_bytes; i++)
+	{
+		if (i != num_bytes - 1)
+			printf("%02hhx ", ptr[i]);
+		else
+			printf("%02hhx\n", ptr[i]);
+	}
 
 	return (0);
 }
