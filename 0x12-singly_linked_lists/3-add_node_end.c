@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * add_node - add node to the begining of the list
+ * add_node_end - add node to the begining of the list
  *
  * @head: head of the list
  * @str: string to copy in the node
