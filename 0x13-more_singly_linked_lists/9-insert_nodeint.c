@@ -2,34 +2,6 @@
 #include <stdlib.h>
 
 /**
- * add_nodeint - add a node to begining of the listint_t list
- *
- * @head: pointer to a pointer to node
- * @n: integer to add to the node
- *
- * Return: the address of the new node
- */
-
-listint_t *add_nodeint(listint_t **head, const int n)
-{
-	listint_t *new;
-	listint_t *temp;
-
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-	return (NULL);
-
-	new->n = n;
-	new->next = NULL;
-
-	temp = *head;
-	*head = new;
-	new->next = temp;
-
-	return (new);
-}
-
-/**
  * insert_nodeint_at_index - insert a node at given position
  *
  * @head: address to the pointer of the first node
@@ -41,33 +13,32 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *ptr;
-	listint_t *new;
-	unsigned int i = 0;
-
-	if (idx == 0)
-	{
-		new = add_nodeint(head, n);
-		return (new);
-	}
+	listint_t *new, *copy = *head;
+	unsigned int node;
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
-		return (new);
-	new->n = n;
-	new->next = NULL;
+		return (NULL);
 
-	ptr = *head;
-	while (ptr)
+	new->n = n;
+
+	if (idx == 0)
 	{
-		if (ptr->next == NULL)
-			return (NULL);
-		if (i == idx - 1)
-			break;
-		ptr = ptr->next;
-		i++;
+		new->next = copy;
+		*head = new;
+		return (new);
 	}
-	new->next = ptr->next;
-	ptr->next = new;
+
+	for (node = 0; node < (idx - 1); node++)
+	{
+		if (copy == NULL || copy->next == NULL)
+			return (NULL);
+
+		copy = copy->next;
+	}
+
+	new->next = copy->next;
+	copy->next = new;
+
 	return (new);
 }
