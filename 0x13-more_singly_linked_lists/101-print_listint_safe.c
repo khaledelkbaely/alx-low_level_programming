@@ -38,7 +38,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t nodes = 1;
 	const listint_t *sptr = head, *fptr = head;
 
-	if (head == NULL)
+	if (head == NULL || head->next == NULL)
 		exit(98);
 	while (fptr && fptr->next)
 	{
