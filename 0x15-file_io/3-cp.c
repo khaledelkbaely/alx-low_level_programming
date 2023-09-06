@@ -34,9 +34,12 @@ int main(int argc, char **argv)
 		if ((write(fdt, buf, rd)) != rd)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]), exit(99);
 
+	if (rd == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", argv[1]), exit(98);
+
 	if (close(fdf) < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdf), exit(100);
 	if (close(fdt) < 0)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdt), exit(100);
-	return (0);
+	return (EXIT_SUCCESS);
 }
