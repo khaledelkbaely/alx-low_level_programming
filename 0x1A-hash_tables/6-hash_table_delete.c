@@ -1,12 +1,12 @@
 #include "hash_tables.h"
 
 /**
-* hash_table_delete - free memory allocated for hash table
-*
-* @ht: hash table type
-*
-* Return: Nothing
-*/
+ * hash_table_delete - free memory allocated for hash table
+ *
+ * @ht: hash table type
+ *
+ * Return: Nothing
+ */
 void hash_table_delete(hash_table_t *ht)
 {
 	hash_node_t *ptr, *tmp;
@@ -21,15 +21,15 @@ void hash_table_delete(hash_table_t *ht)
 		ptr = ht->array[i];
 		while (ptr)
 		{
-      free(ptr->value);
-      free(ptr->key);
-      tmp = ptr;
+			free(ptr->value);
+			free(ptr->key);
+			tmp = ptr;
 			ptr = ptr->next;
-      free(tmp);
+			free(tmp);
 		}
 	}
-  free(ht->array);
-  ht->array = NULL;
-  ht->size = 0;
-  free(ht);
+	free(ht->array);
+	ht->array = NULL;
+	ht->size = 0;
+	free(ht);
 }
