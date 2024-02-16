@@ -10,7 +10,8 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *ptr;
-	unsigned long int i, notfirst = 0;
+	unsigned long int i;
+	char notfirst = 0;
 
 	if (!ht || !ht->array)
 		return;
@@ -25,7 +26,7 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 			else
 				notfirst = 1;
-			printf("'%s':'%s'", ptr->key, ptr->value);
+			printf("'%s': '%s'", ptr->key, ptr->value);
 			ptr = ptr->next;
 		}
 	}
